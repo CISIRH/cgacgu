@@ -2,20 +2,70 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CGACGU - Viewer PDF</title>
+    <title>CGACGU – Viewer PDF</title>
+
+    <!-- -------------- CSS minimal DSFR -------------- -->
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
+        /* ---- Variables de base du DSFR (couleurs, typographies…) ---- */
+        :root {
+            --blue-france-925: #0063cb;
+            --blue-france-975: #001f5f;
+            --grey-1000-50: #f4f4f4;
+            --grey-1000-100: #e5e5e5;
+            --grey-1000-200: #d1d1d1;
+            --white: #fff;
+            --font-family-base: "Marianne", Arial, sans-serif;
+            --font-size-base: 1rem;
+            --spacing-unit: 1rem;
         }
+
+        /* ---- Reset & typographie DSFR (très allégé) ---- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: var(--font-family-base);
+            font-size: var(--font-size-base);
+            background-color: var(--grey-1000-50);
+        }
+
+        /* ---- Header --------------------------------------------------- */
+        .fr-header {
+            background-color: var(--blue-france-925);
+            color: var(--white);
+        }
+        .fr-header__body {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: calc(var(--spacing-unit) * 0.75) var(--spacing-unit);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .fr-header__brand {
+            display: flex;
+            align-items: center;
+        }
+        .fr-header__logo {
+            display: inline-block;
+            height: 2rem;               /* hauteur du logo DSFR */
+            margin-right: calc(var(--spacing-unit) * 0.5);
+        }
+        .fr-header__logo img {
+            height: 100%;
+        }
+        .fr-header__service {
+            font-weight: 600;
+            font-size: 1.125rem;        /* 18 px */
+        }
+
+        /* ---- Votre style existant (conservé) -------------------------- */
         .container {
             max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 20px;
+            margin: 2rem auto;
+            background: var(--white);
+            padding: var(--spacing-unit);
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         h1 {
@@ -29,8 +79,21 @@
         }
     </style>
 </head>
-    
+
 <body>
+
+    <!-- ==================== EN‑TÊTE DSFR ==================== -->
+    <header role="banner" class="fr-header">
+        <div class="fr-header__body">
+            <div class="fr-header__brand">
+                <!-- Logo officiel du DSFR (vous pouvez remplacer l'URL par votre propre logo) -->
+                <a href="https://www.gouv.fr" class="fr-header__logo" title="Accueil du site">
+                    <img src="https://www.systeme-de-design.gouv.fr/assets/logo.svg" alt="Logo République française">
+                </a>
+                <span class="fr-header__service">CGACGU – Viewer PDF</span>
+            </div>
+        </div>
+    </header>
      
     <div class="container">
         <h1>CGACGU - Viewer PDF</h1>
